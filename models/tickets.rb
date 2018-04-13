@@ -17,12 +17,18 @@ class Ticket
     @id = visit['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE tickets SET (customer_id, film_id) = ($1, $2) WHERE id = $3;"
+    values = [@customer_id, @film_id, @id]
+    SqlRunner.run(sql, values)
+  end
+  
   def customer()
     sql = "SELECT * FROM customers WHERE id = $1"
     values = [@customer_id]
     customer_hash = SqlRunner.run(sql, values).first()
     return Customer.new(customer_hash)
   end
-
+  
   
 end
