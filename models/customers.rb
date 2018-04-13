@@ -1,5 +1,4 @@
-require_relative("tickets.rb")
-require_relative("films.rb")
+require_relative("../db/sql_runner")
 require('pry-byebug')
 
 
