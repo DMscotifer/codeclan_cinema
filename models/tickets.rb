@@ -41,5 +41,17 @@ class Ticket
     values = []
     SqlRunner.run(sql, values)
   end
+
+  def delete()
+    sql = "DELETE FROM tickets WHERE id = $1;"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  def self.map_tickets(ticket_data)
+    return ticket_data.map{ |ticket_data| Ticket.new(ticket_data) }
+  end
+
+  
   
 end
