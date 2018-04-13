@@ -23,6 +23,18 @@ class Film
     values = [@title, @price, @id]
     SqlRunner.run(sql, values)
   end
-  
+
+  def self.show_all()
+    sql = "SELECT * FROM films;"
+    results = SqlRunner.run(sql)
+    return results.map{ |result| Film.new(result) }
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM films;"
+    values = []
+    SqlRunner.run(sql, values)
+  end
+
   
 end

@@ -22,6 +22,12 @@ class Ticket
     values = [@customer_id, @film_id, @id]
     SqlRunner.run(sql, values)
   end
+
+  def self.show_all()
+    sql = "SELECT * FROM tickets;"
+    results = SqlRunner.run(sql)
+    return results.map{ |result| Ticket.new(result) }
+  end
   
   def customer()
     sql = "SELECT * FROM customers WHERE id = $1"
@@ -29,6 +35,11 @@ class Ticket
     customer_hash = SqlRunner.run(sql, values).first()
     return Customer.new(customer_hash)
   end
-  
+
+  def self.delete_all()
+    sql = "DELETE FROM tickets;"
+    values = []
+    SqlRunner.run(sql, values)
+  end
   
 end
