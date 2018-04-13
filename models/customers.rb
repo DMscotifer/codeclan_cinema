@@ -54,6 +54,19 @@ class Customer
     results = SqlRunner.run(sql, values)
     return Film.map_films(results)
   end
-  
+
+  def check_funds(film)
+    return true if @funds >= film.price
+  end
+
+  def buy_ticket(film)
+    @funds -= film.price if check_funds(film) == true
+  end
+
+  def number_of_tickets() 
+    bookings_array = @films.count
+    return bookings_array
+  end
+
 end
 
