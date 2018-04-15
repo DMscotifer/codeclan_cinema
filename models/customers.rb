@@ -64,7 +64,7 @@ class Customer
   end
 
   def number_of_tickets() 
-    bookings_array = @films.count
+    bookings_array = films().count
     return bookings_array
   end
 
