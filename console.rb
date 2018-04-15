@@ -1,4 +1,5 @@
 require_relative("models/tickets.rb")
+require_relative("models/screenings.rb")
 require_relative("models/films.rb")
 require_relative("models/customers.rb")
 require_relative("db/sql_runner.rb")
@@ -60,6 +61,9 @@ ticket5.save()
 
 ticket6 = Ticket.new({"customer_id" => customer2.id, "film_id" => film5.id})
 ticket6.save()
+
+screening1 = Screening.new({"film_id" => film1.id, "show_time" => "20:30"})
+screening1.save()
 
 
 binding.pry
