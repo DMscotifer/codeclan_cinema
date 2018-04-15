@@ -30,5 +30,10 @@ class Screening
     return results.map{ |result| Screening.new(result) }
   end
 
+  def self.playing()
+    sql = "SELECT films.*, screenings.* FROM films INNER JOIN screenings ON screenings.film_id = films.id;"
+    results = SqlRunner.run(sql)
+    return results.map{ |result| Screening.new(result) }
+  end
   
 end
