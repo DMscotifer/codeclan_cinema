@@ -65,6 +65,9 @@ ticket6.save()
 screening1 = Screening.new({"film_id" => film1.id, "show_time" => "20:30"})
 screening1.save()
 
+screening2 = Screening.new({"film_id" => film2.id, "show_time" => "21:00"})
+screening2.save()
+
 
 binding.pry
 nil

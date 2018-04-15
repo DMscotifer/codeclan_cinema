@@ -25,7 +25,7 @@ class Screening
   end
 
   def self.show_all()
-    sql = "SELECT * FROM show_time;"
+    sql = "SELECT * FROM screenings;"
     results = SqlRunner.run(sql)
     return results.map{ |result| Screening.new(result) }
   end
