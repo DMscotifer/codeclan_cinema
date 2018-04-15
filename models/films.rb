@@ -53,5 +53,8 @@ class Film
     return Customer.map_customers(results)
   end
 
+  def check_attendance()
+    customers().count
+  end
 
 end
