@@ -35,5 +35,12 @@ class Screening
     results = SqlRunner.run(sql)
     return results.map{ |result| Screening.new(result) }
   end
+
+  def self.customer_bookings()
+    sql = "SELECT films.title, customers.name FROM films, customers INNER JOIN tickets ON customers.id = tickets.customer_id WHERE films.id = tickets.film_id;"
+    SqlRunner.run(sql)
+    
+  end
+
   
 end

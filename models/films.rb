@@ -56,5 +56,8 @@ class Film
   def check_attendance()
     customers().count
   end
+  
 
+  
+  
 end

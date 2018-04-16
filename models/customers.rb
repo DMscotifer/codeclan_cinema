@@ -63,10 +63,6 @@ class Customer
     @funds -= film.price if check_funds(film) == true
   end
 
-  def number_of_tickets() 
-    bookings_array = films().count
-    return bookings_array
-  end
 
 end
 
